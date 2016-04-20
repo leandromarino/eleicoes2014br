@@ -95,8 +95,8 @@ tabela_final <- rbind(tabela_final,tabela_final[28,])
 tabela_final[28,1] <- '*Tot'
 tabela_final[28,2:4] <- colSums(tabela_final[1:27,2:4])
 tabela_final <- merge(tb_ufs,tabela_final,by.x='sguf',by.y='UF',all=T)
-tabela_final[28,2] <- '00'
-tabela_final[28,3] <- 'Brasil'
+tabela_final[1,2] <- '00'
+tabela_final[1,3] <- 'Brasil'
 tabela_final <- tabela_final[order(tabela_final$coduf),]
 library(xlsx)
 xlsx::write.xlsx(tabela_final,paste0(dirElei2014,'\\tabela_final.xlsx'), col.names = T, row.names = F)
